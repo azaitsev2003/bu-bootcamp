@@ -1,7 +1,8 @@
 import org.junit.jupiter.api.Test; 
 import static org.junit.jupiter.api.Assertions.*; 
 import java.util.ArrayList; 
-import java.util.Arrays; 
+import java.util.Arrays;
+import java.util.List; 
  
 public class GradeAnalyzerTest { 
  
@@ -34,5 +35,23 @@ public class GradeAnalyzerTest {
     void calculateAverage_handlesAllSameValues() { 
         ArrayList<Integer> scores = new ArrayList<>(Arrays.asList(88, 88, 88)); 
         assertEquals(88.0, GradeAnalyzer.calculateAverage(scores)); 
+    }
+
+    @Test
+    void calculateAverage_tenScoresReturnsCorrectAverage() {
+        ArrayList<Integer> scores = new ArrayList<>();
+
+        scores.add(92);
+        scores.add(67);
+        scores.add(88);
+        scores.add(100);
+        scores.add(73);
+        scores.add(95);
+        scores.add(81);
+        scores.add(76);
+        scores.add(70);
+        scores.add(58);
+
+        assertEquals(80.0, GradeAnalyzer.calculateAverage(scores));
     }
 }
